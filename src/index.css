@@ -1,0 +1,408 @@
+/* Global Styles (dans votre fichier CSS ou dans les styles globaux de Tailwind) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ajoutez des styles personnalisés ici */
+html {
+    @apply bg-gray-900; /* Couleur de fond sombre */
+}
+
+body {
+    @apply text-white; /* Couleur de texte blanche par défaut */
+}
+
+/* Styles pour le Header */
+.header {
+    @apply bg-gradient-to-r from-indigo-800 to-purple-600 p-4 shadow-lg; /* Dégradé de couleur pour le header */
+}
+
+.header a {
+    @apply text-gray-200 hover:text-pink-400 transition duration-300; /* Lien avec effet au survol */
+}
+
+/* Styles pour le Footer */
+.footer {
+    @apply bg-gray-800 text-gray-400 py-6 mt-12; /* Couleur sombre pour le footer */
+}
+
+/* Styles pour la section d'introduction */
+.intro {
+    @apply text-center py-20 px-6; /* Centrer le contenu */
+}
+
+.intro h1 {
+    @apply text-5xl md:text-6xl font-extrabold tracking-wide mb-6; /* Taille et poids de la police */
+}
+
+.intro p {
+    @apply text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed; /* Texte descriptif */
+}
+
+/* Styles pour la section des fonctionnalités */
+.features {
+    @apply bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 py-20 px-8 text-white; /* Dégradé pour la section des fonctionnalités */
+}
+
+.features h2 {
+    @apply text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-wide; /* Titre des fonctionnalités */
+}
+
+.feature-item {
+    @apply bg-indigo-800 bg-opacity-60 backdrop-blur-md p-6 rounded-lg shadow-xl transition-transform duration-300 transform hover:scale-105; /* Style de chaque fonctionnalité */
+}
+
+.feature-item h3 {
+    @apply text-2xl font-bold mb-4 text-indigo-100; /* Titre de chaque fonctionnalité */
+}
+
+.feature-item p {
+    @apply text-lg text-indigo-200 leading-relaxed; /* Description de chaque fonctionnalité */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.feature-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optionnel : Ajout d'un effet de flottement pour les cartes */
+.feature-item:hover {
+  animation: float 1s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+      transform: translatey(0);
+  }
+  50% {
+      transform: translatey(-5px);
+  }
+}
+
+/* index.css */
+
+/* Barre de défilement personnalisée pour les navigateurs Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* Largeur de la barre de défilement */
+    height: 10px; /* Hauteur pour les barres horizontales */
+}
+
+/* Piste de la barre de défilement */
+::-webkit-scrollbar-track {
+    background: transparent; /* Fond transparent pour un look épuré */
+}
+
+/* Bouton de défilement (la partie que l'on fait glisser) */
+::-webkit-scrollbar-thumb {
+    background: rgba(63, 81, 181, 0.8); /* Couleur de la barre de défilement */
+    border-radius: 10px; /* Coins arrondis */
+    position: relative; /* Nécessaire pour la bulle */
+}
+
+/* Effet bulle dans la barre de défilement */
+::-webkit-scrollbar-thumb:before {
+    content: ''; /* Crée une bulle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px; /* Largeur de la bulle */
+    height: 20px; /* Hauteur de la bulle */
+    background: rgba(255, 255, 255, 0.4); /* Couleur de la bulle */
+    border-radius: 50%; /* Bulle ronde */
+    transform: translate(-50%, -50%) scale(0); /* Position initiale et échelle 0 */
+    transition: transform 0.3s ease; /* Transition pour l'animation */
+}
+
+/* Agrandissement de la bulle au survol du bouton de défilement */
+::-webkit-scrollbar-thumb:hover:before {
+    transform: translate(-50%, -50%) scale(1); /* Agrandir la bulle au survol */
+}
+
+/* Styles pour Firefox */
+* {
+    scrollbar-width: thin; /* Utiliser une barre de défilement fine */
+    scrollbar-color: rgba(63, 81, 181, 0.8) transparent; /* Couleur de la barre de défilement */
+}
+
+/* Styles supplémentaires pour le corps */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Police de votre choix */
+    background-color: #121212; /* Couleur de fond sombre */
+    color: #ffffff; /* Couleur du texte */
+    overflow-y: scroll; /* Assurez-vous que la barre de défilement est visible */
+}
+
+/* Ajout de styles pour le survol de la barre de défilement */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(63, 81, 181, 1); /* Changer la couleur au survol */
+}
+
+.btn-tab {
+    padding: 0.5rem 1rem;
+    border: 2px solid #1f2937;
+    background: #374151;
+    color: #f9fafb;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-tab:hover {
+    background: #1f2937;
+}
+
+
+.input {
+    background-color: #2d3748;
+    color: #f9fafb;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #4a5568;
+}
+
+.btn-add, .btn-delete {
+    padding: 0.5rem 1rem;
+    margin: 5px;
+    background-color: #4a5568;
+    color: #f9fafb;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #2d3748;
+}
+
+.btn-delete:hover {
+    background-color: #e53e3e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient {
+    background: linear-gradient(-45deg, #852f7d, #b955fc, #502c68, #393977);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+  }
+  
+  /*
+CSS @property and the New Style
+https://ryanmulligan.dev/blog/css-property-new-style/
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap");
+
+:root {
+  --shiny-cta-bg: #000000;
+  --shiny-cta-bg-subtle: #1a1818;
+  --shiny-cta-fg: #ffffff;
+  --shiny-cta-highlight: blue;
+  --shiny-cta-highlight-subtle: #8484ff;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+.shiny-cta {
+  --animation: gradient-angle linear infinite;
+  --duration: 3s;
+  --shadow-size: 2px;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1.25rem 2.5rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 360px;
+  color: var(--shiny-cta-fg);
+  background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
+      padding-box,
+    conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--shiny-cta-highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      )
+      border-box;
+  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+
+  &::before,
+  &::after,
+  span::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+  }
+
+  &:active {
+    translate: 0 1px;
+  }
+}
+
+/* Dots pattern */
+.shiny-cta::before {
+  --size: calc(100% - var(--shadow-size) * 3);
+  --position: 2px;
+  --space: calc(var(--position) * 2);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(
+      circle at var(--position) var(--position),
+      white calc(var(--position) / 4),
+      transparent 0
+    )
+    padding-box;
+  background-size: var(--space) var(--space);
+  background-repeat: space;
+  mask-image: conic-gradient(
+    from calc(var(--gradient-angle) + 45deg),
+    black,
+    transparent 10% 90%,
+    black
+  );
+  border-radius: inherit;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Inner shimmer */
+.shiny-cta::after {
+  --animation: shimmer linear infinite;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    -50deg,
+    transparent,
+    var(--shiny-cta-highlight),
+    transparent
+  );
+  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+  opacity: 0.6;
+}
+
+.shiny-cta span {
+  z-index: 1;
+
+  &::before {
+    --size: calc(100% + 1rem);
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+    opacity: 0;
+  }
+}
+
+/* Animate */
+.shiny-cta {
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: var(--transition);
+  transition-property: --gradient-angle-offset, --gradient-percent,
+    --gradient-shine;
+
+  &,
+  &::before,
+  &::after {
+    animation: var(--animation) var(--duration),
+      var(--animation) calc(var(--duration) / 0.4) reverse paused;
+    animation-composition: add;
+  }
+
+  span::before {
+    transition: opacity var(--transition);
+    animation: calc(var(--duration) * 1.5) breathe linear infinite;
+  }
+}
+
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent: 20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine: var(--shiny-cta-highlight-subtle);
+
+  &,
+  &::before,
+  &::after {
+    animation-play-state: running;
+  }
+
+  span::before {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes breathe {
+  from,
+  to {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+}
+
+
+
